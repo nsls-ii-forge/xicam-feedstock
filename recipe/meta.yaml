@@ -28,17 +28,9 @@ requirements:
     - PyQt==5.9.2
     - signalslot
     - qdarkstyle
-    - qtpy
     - qtmodern
+    - qtpy
     - yapsy
-
-test:
-  requires:
-    - pytest
-  imports:
-    - xicam
-  commands:
-    - pytest
 
 about:
   home: https://github.com/synchrotrons/Xi-cam
