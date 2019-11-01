@@ -1,0 +1,47 @@
+{% set name = "xicam" %}
+{% set version = "2.1.11" %}
+{% set sha256 = "de4e37098170d87f4a702cc6fe51491e435f728a629af9461c400064a262e25d" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/synchrotrons/Xi-cam/archive/{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+
+requirements:
+  host:
+    - python >=3.6
+    - pip
+  run:
+    - python >=3.6
+    - appdirs
+    - astropy
+    - databroker
+    - numpy
+    - PyQt==5.9.2
+    - signalslot
+    - qdarkstyle
+    - qtpy
+    - qtmodern
+    - yapsy
+
+test:
+  requires:
+    - pytest
+  imports:
+    - xicam
+  commands:
+    - pytest
+
+about:
+  home: https://github.com/synchrotrons/Xi-cam
+  license: BSD 3-clause
+  license_file: LICENSE.md
+  summary: An extensible platform for synchrotron data reduction, visualization, and management
