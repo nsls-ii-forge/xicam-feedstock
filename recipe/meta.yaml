@@ -35,10 +35,8 @@ requirements:
     - yapsy
 
 test:
-  # imports:
-  #  - xicam
-  commands:
-    - xicam --help
+  imports:
+    - xicam
 
 about:
   home: https://github.com/synchrotrons/Xi-cam
