@@ -27,11 +27,14 @@ requirements:
     - astropy
     - databroker
     - numpy
-    - pyqt==5.9.2
+    - pyqt >=5
     - qdarkstyle
     - qtmodern
     - qtpy
     - signalslot
+    - xicam.core
+    - xicam.gui
+    - xicam.plugins 
     - yapsy
 
 test:
