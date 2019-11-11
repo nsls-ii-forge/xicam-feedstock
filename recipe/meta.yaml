@@ -11,26 +11,35 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  skip: True  # [py<36]
+  entry_points:
+    - xicam=run_xicam:main
 
 requirements:
   host:
-    - python >=3.6
+    - python
     - pip
   run:
-    - python >=3.6
+    - python
     - appdirs
     - astropy
     - databroker
     - numpy
-    - PyQt==5.9.2
-    - signalslot
+    - pyqt >=5
     - qdarkstyle
     - qtmodern
     - qtpy
+    - signalslot
+    - xicam.core
+    - xicam.gui
+    - xicam.plugins 
     - yapsy
+
+test:
+  imports:
+    - xicam
 
 about:
   home: https://github.com/synchrotrons/Xi-cam
