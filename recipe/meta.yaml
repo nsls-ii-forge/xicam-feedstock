@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   skip: True  # [py<36]
   entry_points:
@@ -24,8 +24,10 @@ requirements:
   run:
     - python
     - appdirs
+    - area-detector-handlers
     - astropy
-    - databroker
+    - databroker >=1.0.0b3
+    - event-model >=1.13.0b4
     - numpy
     - pyqt >=5
     - qdarkstyle
