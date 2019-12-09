@@ -1,6 +1,6 @@
 {% set name = "xicam" %}
-{% set version = "2.2.3" %}
-{% set sha256 = "c2bf6f39b85a68e6e8aa6e917b225e72ce093474be3e8f2f0b4f9ccfcb29e2ce" %}
+{% set version = "2.2.4" %}
+{% set sha256 = "875a7a6fa6ac0b614b61f8fe4c700ef2163880645137c937d22354f15455b8a8" %}
 
 package:
   name: {{ name|lower }}
