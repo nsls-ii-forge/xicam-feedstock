@@ -9,9 +9,11 @@ package:
 source:
   url: https://github.com/synchrotrons/Xi-cam/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - dunder_init_patch.diff
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   skip: True  # [py<36]
   entry_points:
