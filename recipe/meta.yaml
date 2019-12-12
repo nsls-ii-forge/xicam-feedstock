@@ -1,6 +1,6 @@
 {% set name = "xicam" %}
 {% set version = "2.2.4" %}
-{% set sha256 = "875a7a6fa6ac0b614b61f8fe4c700ef2163880645137c937d22354f15455b8a8" %}
+{% set sha256 = "c2da7e3177ff1ab70fe32075480c0a6dc8c77432912d0ce1bdcdac398c542591" %}
 
 package:
   name: {{ name|lower }}
@@ -42,6 +42,7 @@ requirements:
 test:
   imports:
     - xicam
+    - xicam.args
 
 about:
   home: https://github.com/synchrotrons/Xi-cam
