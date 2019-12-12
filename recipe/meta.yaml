@@ -1,6 +1,6 @@
 {% set name = "xicam" %}
 {% set version = "2.2.4" %}
-{% set sha256 = "875a7a6fa6ac0b614b61f8fe4c700ef2163880645137c937d22354f15455b8a8" %}
+{% set sha256 = "c2da7e3177ff1ab70fe32075480c0a6dc8c77432912d0ce1bdcdac398c542591" %}
 
 package:
   name: {{ name|lower }}
@@ -9,9 +9,11 @@ package:
 source:
   url: https://github.com/synchrotrons/Xi-cam/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - discover-args.patch
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   skip: True  # [py<36]
   entry_points:
@@ -24,8 +26,10 @@ requirements:
   run:
     - python
     - appdirs
+    - area-detector-handlers
     - astropy
-    - databroker
+    - databroker >=1.0.0b4
+    - event-model >=1.13.0b4
     - numpy
     - pyqt >=5
     - qdarkstyle
@@ -40,6 +44,7 @@ requirements:
 test:
   imports:
     - xicam
+    - xicam.args
 
 about:
   home: https://github.com/synchrotrons/Xi-cam
