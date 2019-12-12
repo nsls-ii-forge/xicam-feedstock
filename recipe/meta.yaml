@@ -9,6 +9,8 @@ package:
 source:
   url: https://github.com/synchrotrons/Xi-cam/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - discover-args.patch
 
 build:
   number: 1
