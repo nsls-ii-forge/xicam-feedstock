@@ -27,7 +27,7 @@ requirements:
     - area-detector-handlers
     - astropy
     - databroker >=1.0.0b5
-    - event-model >=1.13.0b5
+    - event-model >=1.13.0b4
     - numpy
     - pyqt >=5
     - qdarkstyle
