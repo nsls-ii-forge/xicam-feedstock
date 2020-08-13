@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/synchrotrons/Xi-cam/archive/{{ version }}.tar.gz
+  url: https://github.com/Xi-CAM/Xi-cam/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   skip: True  # [py<36]
   entry_points:
@@ -45,7 +45,9 @@ test:
     - xicam.args
 
 about:
-  home: https://github.com/synchrotrons/Xi-cam
+  home: https://xi-cam.readthedocs.io
   license: BSD 3-clause
   license_file: LICENSE.md
   summary: An extensible platform for synchrotron data reduction, visualization, and management
+  dev_url: https://github.com/Xi-CAM/Xi-cam
+  doc_url: https://xi-cam.readthedocs.io
